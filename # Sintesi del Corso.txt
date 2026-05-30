@@ -1,0 +1,34 @@
+# Sintesi del Corso: Studi di Fabbricazione
+
+L'obiettivo del corso di "Studi di Fabbricazione" è fornire le metodologie per la concezione, la progettazione e la fabbricazione di un manufatto industriale, ottimizzando la scelta in base alla stretta relazione tra progetto, materiali, tecniche produttive e costi associati [1].
+
+Di seguito una sintesi dei principali argomenti trattati nelle fonti:
+
+## 1. I Materiali per la Fabbricazione
+La scelta del materiale è fondamentale per la realizzazione di un prodotto e si basa su criteri meccanici, fisici, tecnologici ed economici [2]. I materiali si dividono in quattro macro-categorie [3-6]:
+*   **Materiali Metallici:** (es. leghe di alluminio, acciaio, titanio, zama) Hanno un legame metallico, alta conducibilità elettrica e termica, sono deformabili plasticamente (malleabili e duttili) e presentano un comportamento isotropo [4].
+*   **Materiali Polimerici:** Si dividono in termoplastici (effetti termici reversibili, es. PET, PVC, Nylon), termoindurenti (effetti termici irreversibili, es. resine epossidiche) ed elastomeri (gomme, siliconi) [7-10]. Hanno una densità modesta, sono ottimi isolanti, possiedono una buona resistenza agli agenti chimici ma hanno modeste resistenze meccaniche ad alte temperature [11, 12].
+*   **Materiali Ceramici:** Sono isolanti termici ed elettrici, con elevata stabilità chimica e durezza, ma presentano un comportamento fragile [5]. Includono sia ceramici tradizionali (porcellane, terrecotte) sia avanzati (allumina, zirconia) usati in campo biomedicale o aerospaziale [5].
+*   **Materiali Compositi:** Combinano due o più materiali (una matrice/legante e un rinforzo disperso, es. fibra di carbonio o vetroresina) per ottenere proprietà chimico-fisiche superiori, come l'elevato rapporto peso-resistenza [6, 13].
+
+## 2. Tecnologie di Lavorazione Tradizionali
+A seconda del materiale scelto, si impiegano specifici processi manifatturieri:
+*   **Fonderia (Metalli):** Processi per colata in terra o cera persa, oppure pressofusione (a camera calda o fredda) a seconda della lega (es. leghe di alluminio, zama, bronzi) [14, 15]. Tecnologie avanzate includono la formatura allo stato semi-solido (tixoformatura), che riduce la porosità e il ritiro termico, garantendo pezzi di maggiore qualità [16, 17].
+*   **Lavorazione dei Polimeri:** Per i termoplastici si utilizzano l'estrusione (per profili lunghi e costanti), lo stampaggio a iniezione (alta complessità e volumi elevati), il soffiaggio e la termoformatura [18-21]. Per i termoindurenti si ricorre a stampaggio per compressione e poltrusione [20, 22].
+
+## 3. Lavorazioni per Asportazione di Truciolo e Non Convenzionali
+Le operazioni di finitura e sagomatura dei metalli (e non solo) possono avvenire tramite asportazione di materiale [23]. Tuttavia, per geometrie complesse, tolleranze strette o materiali difficili da lavorare, si ricorre a **tecnologie non convenzionali** [24]:
+*   **Lavorazioni Laser:** Usano l'energia del raggio laser per fondere e vaporizzare il materiale. Trovano impiego nel taglio, foratura, saldatura e nei trattamenti termici superficiali su un'ampia varietà di materiali [25, 26].
+*   **Elettroerosione (EDM):** (A tuffo o a filo) Asporta il materiale mediante scariche elettriche. Funziona solo su materiali conduttori e la lavorazione non dipende dalle proprietà meccaniche (es. durezza) del materiale, permettendo forme finissime e tolleranze millimetriche [26, 27].
+*   **Waterjet:** Taglio "a freddo" mediante un getto d'acqua ad altissima pressione, spesso unito ad abrasivi, capace di tagliare qualsiasi materiale senza distorsioni termiche [27, 28].
+
+## 4. Additive Manufacturing (Stampa 3D)
+La fabbricazione additiva rappresenta un paradigma opposto alle lavorazioni sottrattive: realizza oggetti depositando il materiale *strato su strato* a partire da un modello CAD 3D, che subisce un processo informatico di sezionamento (*slicing*) [29-31]. 
+*   **Vantaggi:** Libertà quasi totale di design (nessun problema per sottosquadri e cavità chiuse), drastica riduzione degli scarti di lavorazione, possibilità di integrare assiemi in un unico pezzo (riducendo le necessità di assemblaggio e le scorte) e tempi rapidi di realizzazione (time-to-market ridotto) [30, 32-34].
+*   **Tecnologie principali:** *Fused Deposition Modeling* (FDM), che usa un estrusore per fondere e depositare filamenti termoplastici [31, 35], e i sistemi a letto di polvere (*Powder Bed Fusion*), che usano laser o fasci di elettroni (come in SLS o EBM) per sinterizzare o fondere polveri polimeriche o metalliche [35, 36].
+
+## 5. Costi di Produzione e Aspetti Economici
+L'analisi economica dello sviluppo di un prodotto punta a minimizzare i costi lungo tutto il ciclo di vita (Life Cycle Costing) massimizzando il profitto [37].
+*   **Classificazione dei costi:** I costi si dividono in diretti (materiali, manodopera diretta) e indiretti (spese generali, ammortamenti) e in base al comportamento (fissi o variabili) [38, 39].
+*   **Tecniche di stima:** Nelle fasi preliminari si usano approcci *top-down* o stime parametriche (costruite tramite relazioni statistiche su specifici "cost driver", come peso, potenza o volume) per avere ordini di grandezza veloci [40-43]. Nelle fasi definitive si predilige un approccio analitico *bottom-up* basato sulla *Work Breakdown Structure* (WBS) [44].
+*   **Decision-making:** La valutazione economica poggia sul calcolo del Valore Attualizzato Netto (VAN) con modelli base-case [45, 46]. Tecniche come le analisi *what-if* e le valutazioni dei *trade-off* (es. sacrificare le tempistiche di sviluppo per ridurre il costo di produzione) aiutano il processo di ottimizzazione e la scelta fra soluzioni (es. *make or buy*) [47, 48].

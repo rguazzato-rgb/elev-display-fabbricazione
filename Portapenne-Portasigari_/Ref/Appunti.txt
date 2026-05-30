@@ -1,0 +1,16 @@
+Diametri penne di lusso: Max 14mm
+Lunghezze: 90/170
+Diametri sigari da collezione: Max 23mm
+Lunghezze: similari
+
+Considerando 0.5mm di mat apporto sul raggio, inserti 25mm di diametro
+
+
+Fornitore tubo metacrilato:
+https://www.plexishop.it/it/metacrilato-pmma-acrilico/tubi-in-metacrilato/tubi-trasparenti/tubo-trasparente-o-200-e-194-i-mm.ht
+
+Dimensione degli inserti, e dimensione tubo in metacrilato sono i nostri driver per il dimensionamento.
+
+
+
+

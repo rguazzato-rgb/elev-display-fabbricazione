@@ -1,0 +1,9 @@
+# Logs
+*.log
+
+# Vercel
+.vercel
+
+# OS metadata
+.DS_Store
+Thumbs.db
