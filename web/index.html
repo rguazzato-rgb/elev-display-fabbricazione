@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÉLEV — Espositore di Lusso per Stilografiche</title>
-    <meta name="description" content="ÉLEV — L'espositore cilindrico di lusso per stilografiche e sigari. Meccanismo push-to-open, colonna rotante a 360°, materiali pregiati. €1,350.">
+    <meta name="description" content="ÉLEV — L'espositore cilindrico di lusso per stilografiche e sigari. Meccanismo push-to-open, colonna rotante a 360°, materiali pregiati. €1.350.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Grain overlay for atmosphere -->
+    <div class="grain" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav id="main-nav" class="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">ÉLEV<span class="logo-dot">.</span></a>
+            <a href="#hero" class="nav-logo">ÉLEV<span class="logo-dot">.</span></a>
             <div class="nav-links">
+                <a href="#decompose">Anatomia</a>
                 <a href="#features">Caratteristiche</a>
                 <a href="#gallery">Galleria</a>
                 <a href="#craftsmanship">Fabbricazione</a>
                 <a href="#engineering">Ingegneria</a>
-                <a href="#order" class="nav-cta">Ordina Ora</a>
+                <a href="#order" class="nav-cta">Ordina</a>
             </div>
             <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -30,147 +34,168 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
+        <a href="#decompose">Anatomia</a>
         <a href="#features">Caratteristiche</a>
         <a href="#gallery">Galleria</a>
         <a href="#craftsmanship">Fabbricazione</a>
         <a href="#engineering">Ingegneria</a>
-        <a href="#order" class="nav-cta">Ordina Ora</a>
+        <a href="#order" class="nav-cta">Ordina</a>
     </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <header id="hero" class="hero">
         <div class="hero-bg-particles" id="hero-particles"></div>
-        <div class="hero-content">
-            <div class="hero-badge animate-fade-up">Edizione Limitata</div>
-            <h1 class="hero-title animate-fade-up delay-1">
-                <span class="hero-title-line">L'Arte di</span>
-                <span class="hero-title-line accent">Custodire</span>
-                <span class="hero-title-line">il Prestigio</span>
-            </h1>
-            <p class="hero-subtitle animate-fade-up delay-2">
-                Espositore cilindrico di lusso per stilografiche di pregio. 
-                Meccanismo push-to-open servoassistito con colonna rotante a 360° 
-                su cuscinetto reggispinta di precisione.
-            </p>
-            <div class="hero-actions animate-fade-up delay-3">
-                <a href="#order" class="btn btn-primary">
-                    <span>Scopri di più</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                    </svg>
-                </a>
-                <a href="#gallery" class="btn btn-ghost">Galleria</a>
+        <div class="hero-aura"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-up">Edizione Limitata · 001 / 100</div>
+                <h1 class="hero-title animate-fade-up delay-1">
+                    <span class="hero-title-line">L'arte di</span>
+                    <span class="hero-title-line accent">custodire</span>
+                    <span class="hero-title-line">il prestigio</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-up delay-2">
+                    Espositore cilindrico per stilografiche di pregio. Meccanismo
+                    <em>push-to-open</em> servoassistito e colonna rotante a 360° su
+                    cuscinetto reggispinta di precisione.
+                </p>
+                <div class="hero-actions animate-fade-up delay-3">
+                    <a href="#decompose" class="btn btn-primary">
+                        <span>Esplora l'anatomia</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    </a>
+                    <a href="#order" class="btn btn-ghost">Riserva il tuo</a>
+                </div>
+                <div class="hero-meta animate-fade-up delay-4">
+                    <div class="hero-meta-item"><span class="hero-meta-value">€1.350</span><span class="hero-meta-label">a partire da</span></div>
+                    <div class="hero-meta-divider"></div>
+                    <div class="hero-meta-item"><span class="hero-meta-value">490<i>mm</i></span><span class="hero-meta-label">altezza</span></div>
+                    <div class="hero-meta-divider"></div>
+                    <div class="hero-meta-item"><span class="hero-meta-value">360<i>°</i></span><span class="hero-meta-label">rotazione</span></div>
+                </div>
             </div>
-            <div class="hero-price animate-fade-up delay-4">
-                <span class="price-label">A partire da</span>
-                <span class="price-value">€1,350</span>
-                <span class="price-vat">IVA inclusa</span>
+            <div class="hero-stage animate-fade-up delay-2">
+                <div class="hero-glow"></div>
+                <img src="images/parts/assembled.png" alt="ÉLEV — meccanismo dell'espositore" id="hero-img" class="hero-product">
+                <span class="hero-caption">Il meccanismo · scocca in alluminio anodizzato</span>
             </div>
         </div>
-        <div class="hero-image animate-fade-up delay-2">
-            <div class="hero-image-glow"></div>
-            <img src="images/chiuso_penne.png" alt="ÉLEV Espositore chiuso con penne" id="hero-img">
-        </div>
-        <div class="hero-scroll-indicator">
+        <a href="#decompose" class="hero-scroll-indicator">
+            <span>Scorri per scomporre</span>
             <div class="scroll-line"></div>
-            <span>Scorri</span>
-        </div>
-    </section>
+        </a>
+    </header>
 
     <!-- Specs Ticker -->
     <div class="ticker-bar">
         <div class="ticker-track">
             <div class="ticker-content">
-                <span>⬡ Diametro 210mm</span>
-                <span>◈ Altezza 490mm</span>
-                <span>↕ Corsa 250mm</span>
-                <span>⟳ Rotazione 360°</span>
-                <span>✦ Push-to-Open</span>
-                <span>◆ Alluminio Anodizzato</span>
-                <span>⬡ Cuscinetto NTN</span>
-                <span>◈ Magneti N52</span>
-                <span>✦ Ottone OT58</span>
-                <span>⬡ Diametro 210mm</span>
-                <span>◈ Altezza 490mm</span>
-                <span>↕ Corsa 250mm</span>
-                <span>⟳ Rotazione 360°</span>
-                <span>✦ Push-to-Open</span>
-                <span>◆ Alluminio Anodizzato</span>
-                <span>⬡ Cuscinetto NTN</span>
-                <span>◈ Magneti N52</span>
-                <span>✦ Ottone OT58</span>
+                <span>Diametro 210mm</span><span class="t-dot">✦</span>
+                <span>Altezza 490mm</span><span class="t-dot">✦</span>
+                <span>Corsa 250mm</span><span class="t-dot">✦</span>
+                <span>Rotazione 360°</span><span class="t-dot">✦</span>
+                <span>Push-to-Open</span><span class="t-dot">✦</span>
+                <span>Alluminio Anodizzato</span><span class="t-dot">✦</span>
+                <span>Cuscinetto NTN 51124</span><span class="t-dot">✦</span>
+                <span>Magneti N52</span><span class="t-dot">✦</span>
+                <span>Ottone OT58</span><span class="t-dot">✦</span>
+                <span>Diametro 210mm</span><span class="t-dot">✦</span>
+                <span>Altezza 490mm</span><span class="t-dot">✦</span>
+                <span>Corsa 250mm</span><span class="t-dot">✦</span>
+                <span>Rotazione 360°</span><span class="t-dot">✦</span>
+                <span>Push-to-Open</span><span class="t-dot">✦</span>
+                <span>Alluminio Anodizzato</span><span class="t-dot">✦</span>
+                <span>Cuscinetto NTN 51124</span><span class="t-dot">✦</span>
+                <span>Magneti N52</span><span class="t-dot">✦</span>
+                <span>Ottone OT58</span><span class="t-dot">✦</span>
             </div>
         </div>
     </div>
+
+    <!-- Manifesto -->
+    <section class="manifesto">
+        <div class="container">
+            <p class="manifesto-text" data-animate>
+                Otto componenti lavorati, un solo gesto. <span class="accent">ÉLEV</span> trasforma
+                la custodia delle tue stilografiche in un rituale: premi, e il prestigio si eleva.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== DECOMPOSE — Scroll-driven exploded view ===== -->
+    <section id="decompose" class="decompose">
+        <div class="decompose-sticky">
+            <div class="decompose-grid container">
+                <!-- Left: narrative -->
+                <div class="decompose-text">
+                    <span class="section-tag">Anatomia · Esploso Tecnico</span>
+                    <h2 class="section-title">Scorri per<br><span class="accent">scomporre</span></h2>
+                    <p class="decompose-lead">Ottocomponenti che dialogano con tolleranze centesimali. Scorri verso il basso: l'oggetto si separa lungo il suo asse, rivelando ogni materiale.</p>
+                    <ol class="part-list" id="part-list">
+                        <li data-part="coperchio"><span class="part-idx">01</span><div><strong>Coperchio Superiore</strong><em>Ottone OT58 · finitura raggiera</em></div><span class="part-cost">€142,37</span></li>
+                        <li data-part="tappo"><span class="part-idx">02</span><div><strong>Tappo di Battuta</strong><em>PLA · stampa FDM</em></div><span class="part-cost">€10,50</span></li>
+                        <li data-part="tirante"><span class="part-idx">03</span><div><strong>Tirante &amp; Molla</strong><em>Alluminio 6082</em></div><span class="part-cost">€27,59</span></li>
+                        <li data-part="colonna"><span class="part-idx">04</span><div><strong>Colonna Centrale</strong><em>PLA · fino a 18 penne</em></div><span class="part-cost">€24,78</span></li>
+                        <li data-part="supporto"><span class="part-idx">05</span><div><strong>Supporto Rotante</strong><em>Acciaio C45 brunito</em></div><span class="part-cost">€134,92</span></li>
+                        <li data-part="base"><span class="part-idx">06</span><div><strong>Base</strong><em>Alluminio 6082 anodizzato</em></div><span class="part-cost">€116,99</span></li>
+                        <li data-part="piedini"><span class="part-idx">07</span><div><strong>Piedini ×4</strong><em>TPU flessibile</em></div><span class="part-cost">€8,39</span></li>
+                    </ol>
+                    <div class="decompose-progress"><div class="decompose-progress-bar" id="decompose-bar"></div></div>
+                </div>
+                <!-- Right: exploded stage -->
+                <div class="decompose-stage" id="decompose-stage">
+                    <div class="stage-glow"></div>
+                    <div class="stage-layers" id="stage-layers">
+                        <img class="explode-layer" data-part="base"      data-explode="0.206"  src="images/parts/base.png"      alt="Base">
+                        <img class="explode-layer" data-part="supporto"  data-explode="0.111"  src="images/parts/supporto.png"  alt="Supporto rotante">
+                        <img class="explode-layer" data-part="colonna"   data-explode="0.026"  src="images/parts/colonna.png"   alt="Colonna centrale">
+                        <img class="explode-layer" data-part="tirante"   data-explode="-0.051" src="images/parts/tirante.png"   alt="Tirante e molla">
+                        <img class="explode-layer" data-part="piedini"   data-explode="0.300"  src="images/parts/piedini.png"   alt="Piedini">
+                        <img class="explode-layer" data-part="tappo"     data-explode="-0.154" src="images/parts/tappo.png"     alt="Tappo">
+                        <img class="explode-layer" data-part="coperchio" data-explode="-0.257" src="images/parts/coperchio.png" alt="Coperchio superiore">
+                    </div>
+                    <div class="stage-hint" id="stage-hint">assemblato</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Features Section -->
     <section id="features" class="section features-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Ingegneria Raffinata</span>
-                <h2 class="section-title">Ogni Dettaglio<br><span class="accent">Perfezionato</span></h2>
-                <p class="section-desc">Un capolavoro di ingegneria meccanica dove tecnologia e design si fondono per creare un'esperienza unica.</p>
+                <h2 class="section-title">Ogni dettaglio<br><span class="accent">perfezionato</span></h2>
+                <p class="section-desc">Un capolavoro di meccanica dove tecnologia e design si fondono in un'unica esperienza tattile.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card" data-animate>
                     <div class="feature-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                     </div>
                     <h3>Push-to-Open</h3>
-                    <p>Meccanismo magnetico al neodimio N52 con molla di compressione nascosta. Basta premere: la colonna si eleva di 250mm rivelando le tue penne.</p>
+                    <p>Meccanismo magnetico al neodimio N52 con molla di compressione nascosta. Basta premere: la colonna si eleva di 250&nbsp;mm rivelando le tue penne.</p>
                 </div>
                 <div class="feature-card" data-animate>
                     <div class="feature-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     </div>
                     <h3>Rotazione 360°</h3>
-                    <p>Cuscinetto reggispinta NTN 51124 a sfere per una rotazione fluida e silenziosa. Seleziona la tua penna preferita con un gesto naturale.</p>
+                    <p>Cuscinetto reggispinta NTN 51124 a sfere per una rotazione fluida e silenziosa. Seleziona la tua stilografica con un gesto naturale.</p>
                 </div>
                 <div class="feature-card" data-animate>
                     <div class="feature-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/>
-                            <path d="M12 22V12"/>
-                            <path d="M2 7l10 5 10-5"/>
-                        </svg>
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/><path d="M12 22V12"/><path d="M2 7l10 5 10-5"/></svg>
                     </div>
                     <h3>Materiali Pregiati</h3>
-                    <p>Base in alluminio 6082 anodizzato nero, supporto rotante in acciaio C45 brunito e coperchio in ottone OT58 lavorato dal pieno. Ogni materiale scelto per durabilità ed eleganza.</p>
+                    <p>Base in alluminio 6082 anodizzato, supporto in acciaio C45 brunito e coperchio in ottone OT58 lavorato dal pieno. Ogni materiale scelto per durabilità ed eleganza.</p>
                 </div>
                 <div class="feature-card" data-animate>
                     <div class="feature-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="11" width="18" height="11" rx="2"/>
-                            <path d="M7 11V7a5 5 0 0110 0v4"/>
-                        </svg>
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
                     </div>
                     <h3>Protezione Totale</h3>
-                    <p>Il tubo in PMMA trasparente con spessore 3mm protegge le tue stilografiche dalla polvere, permettendoti di ammirarle in ogni momento.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="section video-section">
-        <div class="container">
-            <div class="video-wrapper" data-animate>
-                <video id="product-video" autoplay muted loop playsinline>
-                    <source src="images/High_end_commercial_product_vi.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay">
-                    <button class="video-play-btn" id="video-play-btn" aria-label="Play video">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                            <polygon points="5,3 19,12 5,21"/>
-                        </svg>
-                    </button>
+                    <p>Il tubo in PMMA trasparente con spessore 3&nbsp;mm protegge le stilografiche dalla polvere, permettendoti di ammirarle in ogni momento.</p>
                 </div>
             </div>
         </div>
@@ -181,38 +206,30 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Design Esclusivo</span>
-                <h2 class="section-title">Ogni Prospettiva<br><span class="accent">Seduce</span></h2>
-                <p class="section-desc">Un oggetto progettato per essere ammirato da qualsiasi angolazione. Scopri ogni dettaglio.</p>
+                <h2 class="section-title">Ogni prospettiva<br><span class="accent">seduce</span></h2>
+                <p class="section-desc">Un oggetto pensato per essere ammirato da qualsiasi angolazione.</p>
             </div>
             <div class="showcase-grid">
-                <div class="showcase-item showcase-large" data-animate>
-                    <img src="images/render_angled_open.jpg" alt="Vista angolare aperto">
-                    <div class="showcase-label">Apertura Completa — Vista Prospettica</div>
-                </div>
-                <div class="showcase-item" data-animate>
-                    <img src="images/render_open_top.jpg" alt="Vista dall'alto aperto">
-                    <div class="showcase-label">Vista Dall'Alto</div>
-                </div>
-                <div class="showcase-item" data-animate>
-                    <img src="images/render_front_open.jpg" alt="Vista frontale aperto">
-                    <div class="showcase-label">Vista Frontale</div>
-                </div>
-                <div class="showcase-item showcase-wide" data-animate>
-                    <img src="images/render_top_view.jpg" alt="Vista superiore coperchio">
-                    <div class="showcase-label">Coperchio in Ottone — Vista Zenitale</div>
-                </div>
-                <div class="showcase-item" data-animate>
-                    <img src="images/render_side_open.jpg" alt="Vista laterale aperto">
-                    <div class="showcase-label">Profilo Laterale</div>
-                </div>
-                <div class="showcase-item" data-animate>
-                    <img src="images/render_bottom.jpg" alt="Vista inferiore">
-                    <div class="showcase-label">Vista Inferiore</div>
-                </div>
-                <div class="showcase-item showcase-wide" data-animate>
-                    <img src="images/render_underside.jpg" alt="Base e piedini">
-                    <div class="showcase-label">Base Anodizzata — Dettaglio Piedini TPU</div>
-                </div>
+                <figure class="plate plate-tall" data-animate>
+                    <img src="images/render_open_dramatic.jpg" alt="Apertura completa, vista prospettica" loading="lazy">
+                    <figcaption><span>01</span> Apertura completa — colonna elevata</figcaption>
+                </figure>
+                <figure class="plate" data-animate>
+                    <img src="images/render_lid_top.jpg" alt="Coperchio in ottone, vista zenitale" loading="lazy">
+                    <figcaption><span>02</span> Coperchio in ottone — raggiera</figcaption>
+                </figure>
+                <figure class="plate" data-animate>
+                    <img src="images/render_front_spring.jpg" alt="Vista frontale con molla" loading="lazy">
+                    <figcaption><span>03</span> Molla di compressione a vista</figcaption>
+                </figure>
+                <figure class="plate plate-wide" data-animate>
+                    <img src="images/render_open_floating.jpg" alt="Vista sospesa del meccanismo" loading="lazy">
+                    <figcaption><span>04</span> Il meccanismo sospeso</figcaption>
+                </figure>
+                <figure class="plate" data-animate>
+                    <img src="images/render_open_angled.jpg" alt="Vista angolare aperto" loading="lazy">
+                    <figcaption><span>05</span> Vista angolare — apertura</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -222,16 +239,14 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Visione a 360°</span>
-                <h2 class="section-title">Ogni Angolo<br><span class="accent">Racconta</span></h2>
+                <h2 class="section-title">Ogni angolo<br><span class="accent">racconta</span></h2>
             </div>
             <div class="gallery-tabs">
                 <button class="gallery-tab active" data-tab="main">Prodotto</button>
                 <button class="gallery-tab" data-tab="components">Componenti</button>
                 <button class="gallery-tab" data-tab="details">Dettagli</button>
             </div>
-            <div class="gallery-grid" id="gallery-grid">
-                <!-- Gallery items populated by JS -->
-            </div>
+            <div class="gallery-grid" id="gallery-grid"></div>
         </div>
     </section>
 
@@ -240,9 +255,7 @@
         <button class="lightbox-close" id="lightbox-close" aria-label="Chiudi">&times;</button>
         <button class="lightbox-prev" id="lightbox-prev" aria-label="Precedente">&#8249;</button>
         <button class="lightbox-next" id="lightbox-next" aria-label="Successivo">&#8250;</button>
-        <div class="lightbox-content">
-            <img src="" alt="" id="lightbox-img">
-        </div>
+        <div class="lightbox-content"><img src="" alt="" id="lightbox-img"></div>
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
@@ -251,71 +264,46 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Lavorazioni</span>
-                <h2 class="section-title">Maestria<br><span class="accent">Artigianale</span></h2>
-                <p class="section-desc">Ogni pezzo nasce dall'unione di tecnologie CNC di precisione, stampa 3D avanzata e finiture manuali per un risultato unico.</p>
+                <h2 class="section-title">Maestria<br><span class="accent">artigianale</span></h2>
+                <p class="section-desc">Tecnologie CNC di precisione, stampa 3D avanzata e finiture manuali per un risultato unico.</p>
             </div>
             <div class="craft-timeline">
                 <div class="craft-step" data-animate>
-                    <div class="craft-step-image">
-                        <img src="images/cnc_turning.png" alt="Tornitura CNC">
-                    </div>
+                    <div class="craft-step-image"><img src="images/cnc_turning.png" alt="Tornitura CNC" loading="lazy"></div>
                     <div class="craft-step-content">
                         <span class="craft-step-number">01</span>
-                        <h3>Tornitura & Fresatura CNC</h3>
-                        <p>La base in <strong>Alluminio 6082</strong>, il supporto rotante in <strong>Acciaio C45</strong> e il coperchio in <strong>Ottone OT58</strong> vengono lavorati dal pieno con macchine CNC a 5 assi. Tolleranze centesimali garantiscono l'accoppiamento perfetto di ogni componente.</p>
+                        <h3>Tornitura &amp; Fresatura CNC</h3>
+                        <p>Base in <strong>Alluminio 6082</strong>, supporto rotante in <strong>Acciaio C45</strong> e coperchio in <strong>Ottone OT58</strong> lavorati dal pieno con macchine a 5 assi. Tolleranze centesimali per accoppiamenti perfetti.</p>
                         <div class="craft-stats">
-                            <div class="craft-stat">
-                                <span class="craft-stat-value">3.95h</span>
-                                <span class="craft-stat-label">Tempo macchina</span>
-                            </div>
-                            <div class="craft-stat">
-                                <span class="craft-stat-value">€50/h</span>
-                                <span class="craft-stat-label">Tariffa CNC</span>
-                            </div>
+                            <div class="craft-stat"><span class="craft-stat-value">3,95h</span><span class="craft-stat-label">Tempo macchina</span></div>
+                            <div class="craft-stat"><span class="craft-stat-value">€50/h</span><span class="craft-stat-label">Tariffa CNC</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="craft-step reverse" data-animate>
-                    <div class="craft-step-image">
-                        <img src="images/fdm_printing.png" alt="Stampa 3D FDM">
-                    </div>
+                    <div class="craft-step-image"><img src="images/fdm_printing.png" alt="Stampa 3D FDM" loading="lazy"></div>
                     <div class="craft-step-content">
                         <span class="craft-step-number">02</span>
                         <h3>Stampa 3D FDM</h3>
-                        <p>La colonna centrale, i tappi e i piedini sono prodotti con <strong>stampanti FDM industriali</strong>. La colonna in PLA con infill al 20%, i tappi al 30%, e i piedini in <strong>TPU flessibile</strong> al 100% per un effetto anti-scivolamento.</p>
+                        <p>Colonna centrale, tappi e piedini prodotti con <strong>stampanti FDM industriali</strong>. Colonna in PLA al 20%, tappi al 30% e piedini in <strong>TPU flessibile</strong> al 100% per un effetto antiscivolo.</p>
                         <div class="craft-stats">
-                            <div class="craft-stat">
-                                <span class="craft-stat-value">9h</span>
-                                <span class="craft-stat-label">Tempo stampa</span>
-                            </div>
-                            <div class="craft-stat">
-                                <span class="craft-stat-value">€3/h</span>
-                                <span class="craft-stat-label">Tariffa FDM</span>
-                            </div>
+                            <div class="craft-stat"><span class="craft-stat-value">9h</span><span class="craft-stat-label">Tempo stampa</span></div>
+                            <div class="craft-stat"><span class="craft-stat-value">€3/h</span><span class="craft-stat-label">Tariffa FDM</span></div>
                         </div>
                     </div>
                 </div>
                 <div class="craft-step" data-animate>
-                    <div class="craft-step-image">
-                        <img src="images/anodizing_process.png" alt="Anodizzazione">
-                    </div>
+                    <div class="craft-step-image"><img src="images/anodizing_process.png" alt="Anodizzazione" loading="lazy"></div>
                     <div class="craft-step-content">
                         <span class="craft-step-number">03</span>
                         <h3>Trattamenti Superficiali</h3>
-                        <p><strong>Anodizzazione nera</strong> della base in alluminio per una finitura opaca di classe. <strong>Brunitura chimica</strong> dell'acciaio per resistenza e aspetto tecnico. Ogni trattamento è selezionato per esaltare il materiale.</p>
+                        <p><strong>Anodizzazione nera</strong> della base in alluminio per una finitura opaca di classe e <strong>brunitura chimica</strong> dell'acciaio per resistenza e aspetto tecnico. Ogni trattamento esalta il materiale.</p>
                         <div class="craft-stats">
-                            <div class="craft-stat">
-                                <span class="craft-stat-value">€3.00</span>
-                                <span class="craft-stat-label">Anodizzazione</span>
-                            </div>
-                            <div class="craft-stat">
-                                <span class="craft-stat-value">€1.50</span>
-                                <span class="craft-stat-label">Brunitura</span>
-                            </div>
+                            <div class="craft-stat"><span class="craft-stat-value">€3,00</span><span class="craft-stat-label">Anodizzazione</span></div>
+                            <div class="craft-stat"><span class="craft-stat-value">€1,50</span><span class="craft-stat-label">Brunitura</span></div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -325,163 +313,102 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Distinta Base</span>
-                <h2 class="section-title">Trasparenza<br><span class="accent">Ingegneristica</span></h2>
-                <p class="section-desc">Ogni componente è stato selezionato e validato per garantire qualità, durata e un'esperienza d'uso senza compromessi.</p>
+                <h2 class="section-title">Trasparenza<br><span class="accent">ingegneristica</span></h2>
+                <p class="section-desc">Ogni componente selezionato e validato per qualità, durata ed esperienza d'uso senza compromessi.</p>
             </div>
 
-            <!-- Cost Breakdown Charts -->
             <div class="charts-grid">
                 <div class="chart-card" data-animate>
                     <h3>Distribuzione Costi BOM</h3>
-                    <div class="chart-container">
-                        <canvas id="bom-chart"></canvas>
-                    </div>
+                    <div class="chart-container"><canvas id="bom-chart"></canvas></div>
                     <div class="chart-legend" id="bom-legend"></div>
                 </div>
                 <div class="chart-card" data-animate>
                     <h3>Costo Unitario di Produzione</h3>
-                    <div class="chart-container">
-                        <canvas id="production-chart"></canvas>
-                    </div>
+                    <div class="chart-container"><canvas id="production-chart"></canvas></div>
                     <div class="chart-legend" id="production-legend"></div>
                 </div>
             </div>
 
-            <!-- Components Detail -->
             <div class="components-accordion">
                 <div class="accordion-item" data-animate>
                     <button class="accordion-header" id="acc-commercial">
-                        <div class="accordion-header-left">
-                            <span class="accordion-icon commercial">C</span>
-                            <div>
-                                <h4>Componenti Commerciali</h4>
-                                <p>6 componenti d'acquisto</p>
-                            </div>
-                        </div>
-                        <div class="accordion-header-right">
-                            <span class="accordion-price">€171.00</span>
-                            <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                        <div class="accordion-header-left"><span class="accordion-icon commercial">C</span><div><h4>Componenti Commerciali</h4><p>6 componenti d'acquisto</p></div></div>
+                        <div class="accordion-header-right"><span class="accordion-price">€171,00</span><svg class="accordion-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
                     </button>
                     <div class="accordion-body">
                         <table class="component-table">
-                            <thead>
-                                <tr><th>Codice</th><th>Componente</th><th>Qty</th><th>Costo</th></tr>
-                            </thead>
+                            <thead><tr><th>Codice</th><th>Componente</th><th>Qty</th><th>Costo</th></tr></thead>
                             <tbody>
-                                <tr><td>C_01</td><td>Tubo Metacrilato PMMA Ø200mm</td><td>1</td><td>€25.00</td></tr>
-                                <tr><td>C_02</td><td>Magneti Neodimio N52</td><td>4</td><td>€8.00</td></tr>
-                                <tr><td>C_03</td><td>O-Ring NBR</td><td>1</td><td>€2.00</td></tr>
-                                <tr><td>C_04</td><td>Molla in Acciaio Armonico</td><td>1</td><td>€12.00</td></tr>
-                                <tr class="highlight-row"><td>—</td><td>Cuscinetto NTN 51124</td><td>1</td><td>€120.00</td></tr>
-                                <tr><td>S_04</td><td>Targhetta Ottone Incisa</td><td>1</td><td>€4.00</td></tr>
+                                <tr><td>C_01</td><td>Tubo Metacrilato PMMA Ø200mm</td><td>1</td><td>€25,00</td></tr>
+                                <tr><td>C_02</td><td>Magneti Neodimio N52</td><td>4</td><td>€8,00</td></tr>
+                                <tr><td>C_03</td><td>O-Ring NBR</td><td>1</td><td>€2,00</td></tr>
+                                <tr><td>C_04</td><td>Molla in Acciaio Armonico</td><td>1</td><td>€12,00</td></tr>
+                                <tr class="highlight-row"><td>—</td><td>Cuscinetto NTN 51124</td><td>1</td><td>€120,00</td></tr>
+                                <tr><td>S_04</td><td>Targhetta Ottone Incisa</td><td>1</td><td>€4,00</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="accordion-item" data-animate>
                     <button class="accordion-header" id="acc-minuteria">
-                        <div class="accordion-header-left">
-                            <span class="accordion-icon minuteria">M</span>
-                            <div>
-                                <h4>Minuteria e Viti</h4>
-                                <p>27 componenti di collegamento</p>
-                            </div>
-                        </div>
-                        <div class="accordion-header-right">
-                            <span class="accordion-price">€1.86</span>
-                            <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                        <div class="accordion-header-left"><span class="accordion-icon minuteria">M</span><div><h4>Minuteria e Viti</h4><p>27 componenti di collegamento</p></div></div>
+                        <div class="accordion-header-right"><span class="accordion-price">€1,86</span><svg class="accordion-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
                     </button>
                     <div class="accordion-body">
                         <table class="component-table">
-                            <thead>
-                                <tr><th>Codice</th><th>Componente</th><th>Qty</th><th>Costo</th></tr>
-                            </thead>
+                            <thead><tr><th>Codice</th><th>Componente</th><th>Qty</th><th>Costo</th></tr></thead>
                             <tbody>
-                                <tr><td>M_01</td><td>Grano M5 Esagonale</td><td>3</td><td>€0.18</td></tr>
-                                <tr><td>M_02</td><td>Vite UNI 5933 M5×10</td><td>6</td><td>€0.24</td></tr>
-                                <tr><td>M_03</td><td>Vite DIN 7500 E M5×16</td><td>18</td><td>€1.44</td></tr>
+                                <tr><td>M_01</td><td>Grano M5 Esagonale</td><td>3</td><td>€0,18</td></tr>
+                                <tr><td>M_02</td><td>Vite UNI 5933 M5×10</td><td>6</td><td>€0,24</td></tr>
+                                <tr><td>M_03</td><td>Vite DIN 7500 E M5×16</td><td>18</td><td>€1,44</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="accordion-item" data-animate>
                     <button class="accordion-header" id="acc-semi">
-                        <div class="accordion-header-left">
-                            <span class="accordion-icon semi">S</span>
-                            <div>
-                                <h4>Semilavorati Prodotti</h4>
-                                <p>8 componenti lavorati CNC + FDM</p>
-                            </div>
-                        </div>
-                        <div class="accordion-header-right">
-                            <span class="accordion-price">€476.04</span>
-                            <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                        <div class="accordion-header-left"><span class="accordion-icon semi">S</span><div><h4>Semilavorati Prodotti</h4><p>8 componenti lavorati CNC + FDM</p></div></div>
+                        <div class="accordion-header-right"><span class="accordion-price">€476,04</span><svg class="accordion-arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
                     </button>
                     <div class="accordion-body">
                         <table class="component-table">
-                            <thead>
-                                <tr><th>ID</th><th>Componente</th><th>Materiale</th><th>Costo</th></tr>
-                            </thead>
+                            <thead><tr><th>ID</th><th>Componente</th><th>Materiale</th><th>Costo</th></tr></thead>
                             <tbody>
-                                <tr class="highlight-row"><td>S_01</td><td>Base</td><td>Alluminio 6082</td><td>€116.99</td></tr>
-                                <tr class="highlight-row"><td>S_02</td><td>Supporto Rotante</td><td>Acciaio C45</td><td>€134.92</td></tr>
-                                <tr class="highlight-row"><td>S_03</td><td>Coperchio</td><td>Ottone OT58</td><td>€142.37</td></tr>
-                                <tr><td>S_05</td><td>Colonna</td><td>PLA</td><td>€24.78</td></tr>
-                                <tr><td>S_06</td><td>Tappo</td><td>PLA</td><td>€10.50</td></tr>
-                                <tr><td>S_07</td><td>Tirante</td><td>Alluminio 6082</td><td>€27.59</td></tr>
-                                <tr><td>S_08</td><td>Tappo</td><td>PLA</td><td>€10.50</td></tr>
-                                <tr><td>S_09</td><td>Piedino (×4)</td><td>TPU</td><td>€8.39</td></tr>
+                                <tr class="highlight-row"><td>S_01</td><td>Base</td><td>Alluminio 6082</td><td>€116,99</td></tr>
+                                <tr class="highlight-row"><td>S_02</td><td>Supporto Rotante</td><td>Acciaio C45</td><td>€134,92</td></tr>
+                                <tr class="highlight-row"><td>S_03</td><td>Coperchio</td><td>Ottone OT58</td><td>€142,37</td></tr>
+                                <tr><td>S_05</td><td>Colonna</td><td>PLA</td><td>€24,78</td></tr>
+                                <tr><td>S_06</td><td>Tappo</td><td>PLA</td><td>€10,50</td></tr>
+                                <tr><td>S_07</td><td>Tirante</td><td>Alluminio 6082</td><td>€27,59</td></tr>
+                                <tr><td>S_08</td><td>Tappo</td><td>PLA</td><td>€10,50</td></tr>
+                                <tr><td>S_09</td><td>Piedino (×4)</td><td>TPU</td><td>€8,39</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <!-- Break-Even Chart -->
             <div class="bep-section" data-animate>
                 <div class="section-header">
                     <span class="section-tag">Analisi Economica</span>
                     <h2 class="section-title">Break-Even<br><span class="accent">Analysis</span></h2>
                 </div>
                 <div class="bep-grid">
-                    <div class="bep-chart-wrapper">
-                        <canvas id="bep-chart"></canvas>
-                    </div>
+                    <div class="bep-chart-wrapper"><canvas id="bep-chart"></canvas></div>
                     <div class="bep-stats">
-                        <div class="bep-stat-card">
-                            <div class="bep-stat-icon">📈</div>
-                            <div class="bep-stat-value counter" data-target="2166">0</div>
-                            <div class="bep-stat-label">Volume di Pareggio (unità)</div>
-                        </div>
-                        <div class="bep-stat-card">
-                            <div class="bep-stat-icon">💰</div>
-                            <div class="bep-stat-value">€2.4M</div>
-                            <div class="bep-stat-label">Fatturato di Pareggio</div>
-                        </div>
-                        <div class="bep-stat-card">
-                            <div class="bep-stat-icon">⏱️</div>
-                            <div class="bep-stat-value counter" data-target="5.2">0</div>
-                            <div class="bep-stat-label">Mesi al Break-Even</div>
-                        </div>
-                        <div class="bep-stat-card">
-                            <div class="bep-stat-icon">🏭</div>
-                            <div class="bep-stat-value">€420</div>
-                            <div class="bep-stat-label">Margine Lordo / Pezzo</div>
-                        </div>
+                        <div class="bep-stat-card"><div class="bep-stat-icon">▱</div><div class="bep-stat-value counter" data-target="2166">0</div><div class="bep-stat-label">Volume di Pareggio (unità)</div></div>
+                        <div class="bep-stat-card"><div class="bep-stat-icon">◈</div><div class="bep-stat-value">€2,4M</div><div class="bep-stat-label">Fatturato di Pareggio</div></div>
+                        <div class="bep-stat-card"><div class="bep-stat-icon">⏱</div><div class="bep-stat-value counter" data-target="5.2">0</div><div class="bep-stat-label">Mesi al Break-Even</div></div>
+                        <div class="bep-stat-card"><div class="bep-stat-icon">✦</div><div class="bep-stat-value">€420</div><div class="bep-stat-label">Margine Lordo / Pezzo</div></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Material Weight Chart -->
             <div class="charts-grid single" data-animate>
                 <div class="chart-card wide">
                     <h3>Peso Grezzo vs Finito dei Semilavorati</h3>
-                    <div class="chart-container wide-chart">
-                        <canvas id="weight-chart"></canvas>
-                    </div>
+                    <div class="chart-container wide-chart"><canvas id="weight-chart"></canvas></div>
                 </div>
             </div>
         </div>
@@ -491,22 +418,10 @@
     <section class="section specs-section">
         <div class="container">
             <div class="specs-grid">
-                <div class="spec-item" data-animate>
-                    <div class="spec-value">210<span class="spec-unit">mm</span></div>
-                    <div class="spec-label">Diametro Esterno</div>
-                </div>
-                <div class="spec-item" data-animate>
-                    <div class="spec-value">490<span class="spec-unit">mm</span></div>
-                    <div class="spec-label">Altezza Chiuso</div>
-                </div>
-                <div class="spec-item" data-animate>
-                    <div class="spec-value">250<span class="spec-unit">mm</span></div>
-                    <div class="spec-label">Corsa di Apertura</div>
-                </div>
-                <div class="spec-item" data-animate>
-                    <div class="spec-value">360<span class="spec-unit">°</span></div>
-                    <div class="spec-label">Rotazione Continua</div>
-                </div>
+                <div class="spec-item" data-animate><div class="spec-value">210<span class="spec-unit">mm</span></div><div class="spec-label">Diametro Esterno</div></div>
+                <div class="spec-item" data-animate><div class="spec-value">490<span class="spec-unit">mm</span></div><div class="spec-label">Altezza Chiuso</div></div>
+                <div class="spec-item" data-animate><div class="spec-value">250<span class="spec-unit">mm</span></div><div class="spec-label">Corsa di Apertura</div></div>
+                <div class="spec-item" data-animate><div class="spec-value">360<span class="spec-unit">°</span></div><div class="spec-label">Rotazione Continua</div></div>
             </div>
         </div>
     </section>
@@ -518,13 +433,10 @@
                 <div class="order-card-glow"></div>
                 <div class="order-content">
                     <span class="section-tag">Disponibilità Limitata</span>
-                    <h2 class="section-title">Riserva il Tuo<br><span class="accent">ÉLEV</span></h2>
-                    <p class="order-desc">Un investimento nel gusto e nella perfezione meccanica. Ogni esemplare viene assemblato a mano e collaudato singolarmente per garantire un funzionamento impeccabile.</p>
+                    <h2 class="section-title">Riserva il tuo<br><span class="accent">ÉLEV</span></h2>
+                    <p class="order-desc">Un investimento nel gusto e nella perfezione meccanica. Ogni esemplare è assemblato a mano e collaudato singolarmente per un funzionamento impeccabile.</p>
                     <div class="order-price-block">
-                        <div class="order-price">
-                            <span class="price-main">€1,350</span>
-                            <span class="price-info">IVA 22% inclusa • Spedizione assicurata</span>
-                        </div>
+                        <div class="order-price"><span class="price-main">€1.350</span><span class="price-info">IVA 22% inclusa · Spedizione assicurata</span></div>
                         <div class="order-details">
                             <div class="order-detail"><span>✓</span> Assemblaggio manuale e collaudo</div>
                             <div class="order-detail"><span>✓</span> Certificato di autenticità numerato</div>
@@ -533,17 +445,13 @@
                         </div>
                     </div>
                     <div class="order-actions">
-                        <button class="btn btn-primary btn-large" id="order-btn">
-                            <span>Ordina Ora — €1,350</span>
-                        </button>
-                        <button class="btn btn-ghost" id="contact-btn">
-                            <span>Richiedi Informazioni</span>
-                        </button>
+                        <button class="btn btn-primary btn-large" id="order-btn"><span>Ordina Ora — €1.350</span></button>
+                        <button class="btn btn-ghost" id="contact-btn"><span>Richiedi Informazioni</span></button>
                     </div>
                 </div>
-                <div class="order-image">
-                    <img src="images/estruso.png" alt="Vista esplosa ÉLEV">
-                </div>
+                <figure class="order-image plate">
+                    <img src="images/render_exploded_angled.jpg" alt="Vista esplosa ÉLEV" loading="lazy">
+                </figure>
             </div>
         </div>
     </section>
@@ -553,32 +461,24 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="nav-logo">ÉLEV<span class="logo-dot">.</span></a>
-                    <p>L'espositore di lusso per chi apprezza l'eccellenza.</p>
+                    <a href="#hero" class="nav-logo">ÉLEV<span class="logo-dot">.</span></a>
+                    <p>L'espositore di lusso per chi apprezza l'eccellenza meccanica.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Prodotto</h4>
-                    <a href="#features">Caratteristiche</a>
-                    <a href="#gallery">Galleria</a>
-                    <a href="#craftsmanship">Fabbricazione</a>
-                    <a href="#engineering">Ingegneria</a>
+                    <a href="#decompose">Anatomia</a><a href="#features">Caratteristiche</a><a href="#gallery">Galleria</a><a href="#craftsmanship">Fabbricazione</a>
                 </div>
                 <div class="footer-col">
                     <h4>Specifiche</h4>
-                    <span>Diametro: 210mm</span>
-                    <span>Altezza: 490mm</span>
-                    <span>Corsa: 250mm</span>
-                    <span>Peso: ~18.6kg</span>
+                    <span>Diametro: 210mm</span><span>Altezza: 490mm</span><span>Corsa: 250mm</span><span>Peso: ~18,6kg</span>
                 </div>
                 <div class="footer-col">
                     <h4>Contatti</h4>
-                    <a href="#">info@elev.design</a>
-                    <a href="#">+39 035 000 0000</a>
-                    <span>Bergamo, Italia</span>
+                    <a href="#">info@elev.design</a><a href="#">+39 035 000 0000</a><span>Bergamo, Italia</span>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 ÉLEV. Studi di Fabbricazione — Università degli Studi di Bergamo. Tutti i diritti riservati.</p>
+                <p>&copy; 2026 ÉLEV — Studi di Fabbricazione · Università degli Studi di Bergamo. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
