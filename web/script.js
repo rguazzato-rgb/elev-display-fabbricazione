@@ -4,6 +4,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const hasGSAP = !!(window.gsap && window.ScrollTrigger);
+    if (hasGSAP) gsap.registerPlugin(ScrollTrigger);
+
+    // ---------- Hero background video ----------
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        if (reduceMotion) {
+            heroVideo.pause();
+        } else {
+            heroVideo.play().catch(() => {});
+            // pause playback while the hero is off-screen
+            new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting) heroVideo.play().catch(() => {});
+                else heroVideo.pause();
+            }, { threshold: 0.05 }).observe(heroVideo);
+        }
+    }
 
     // ---------- Navigation ----------
     const nav = document.getElementById('main-nav');
@@ -13,6 +30,43 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('active'));
     mobileMenu?.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('active')));
+
+    // ---------- Word-by-word reveal (GSAP) ----------
+    function splitWords(el) {
+        const walk = node => {
+            [...node.childNodes].forEach(child => {
+                if (child.nodeType === 3) {
+                    const frag = document.createDocumentFragment();
+                    child.textContent.split(/(\s+)/).forEach(tok => {
+                        if (!tok) return;
+                        if (/^\s+$/.test(tok)) { frag.appendChild(document.createTextNode(tok)); return; }
+                        const w = document.createElement('span'); w.className = 'wr-word';
+                        const inner = document.createElement('span'); inner.className = 'wr-inner';
+                        inner.textContent = tok; w.appendChild(inner); frag.appendChild(w);
+                    });
+                    node.replaceChild(frag, child);
+                } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+                    walk(child);
+                }
+            });
+        };
+        walk(el);
+        el.classList.add('word-reveal');
+        return el.querySelectorAll('.wr-inner');
+    }
+    if (hasGSAP && !reduceMotion) {
+        document.querySelectorAll('.section-title, .manifesto-text').forEach(el => {
+            el.removeAttribute('data-animate'); // handled by GSAP, skip the IO fade
+            const words = splitWords(el);
+            if (!words.length) return;
+            gsap.fromTo(words,
+                { yPercent: 115, opacity: 0 },
+                {
+                    yPercent: 0, opacity: 1, duration: .9, ease: 'power4.out', stagger: .05,
+                    scrollTrigger: { trigger: el, start: 'top 86%', once: true }
+                });
+        });
+    }
 
     // ---------- Reveal on scroll ----------
     const io = new IntersectionObserver((entries) => {
@@ -38,19 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // top -> bottom along the assembly axis
         const order = ['coperchio', 'tappo', 'tirante', 'colonna', 'supporto', 'base', 'piedini'];
 
-        let ticking = false;
-        function render() {
-            ticking = false;
-            const rect = decompose.getBoundingClientRect();
-            const travel = decompose.offsetHeight - window.innerHeight;
-            const p = travel > 0 ? clamp(-rect.top / travel, 0, 1) : 0;
+        let lastP = 0;
+        function renderAt(p) {
+            lastP = p;
             const H = stage.clientHeight || 1;
 
             layers.forEach(l => {
                 const f = parseFloat(l.dataset.explode);
                 const ty = f * H * p;
                 const sc = 1 + 0.018 * p;
-                l.style.transform = `translateY(${ty}px) scale(${sc})`;
+                if (hasGSAP) gsap.set(l, { y: ty, scale: sc });
+                else l.style.transform = `translateY(${ty}px) scale(${sc})`;
             });
 
             if (bar) bar.style.width = (p * 100).toFixed(1) + '%';
@@ -69,12 +121,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 else hint.textContent = 'scomposizione ' + Math.round(p * 100) + '%';
             }
         }
-        function onScroll() {
-            if (!ticking) { ticking = true; requestAnimationFrame(render); }
+
+        if (hasGSAP && !reduceMotion) {
+            // ScrollTrigger with scrub smoothing for a fluid, inertial explosion
+            ScrollTrigger.create({
+                trigger: decompose,
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 0.7,
+                onUpdate: self => renderAt(self.progress),
+                onRefresh: self => renderAt(self.progress)
+            });
+            window.addEventListener('resize', () => renderAt(lastP));
+        } else {
+            let ticking = false;
+            function render() {
+                ticking = false;
+                const rect = decompose.getBoundingClientRect();
+                const travel = decompose.offsetHeight - window.innerHeight;
+                renderAt(travel > 0 ? clamp(-rect.top / travel, 0, 1) : 0);
+            }
+            function onScroll() {
+                if (!ticking) { ticking = true; requestAnimationFrame(render); }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', render);
+            render();
         }
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('resize', render);
-        render();
     }
 
     // ============================================================
@@ -184,24 +257,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.5 });
     document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
 
-    // ---------- Particle background ----------
-    const particleContainer = document.getElementById('hero-particles');
-    if (particleContainer && !reduceMotion) {
-        const canvas = document.createElement('canvas');
-        Object.assign(canvas.style, { width: '100%', height: '100%', position: 'absolute', top: '0', left: '0' });
-        particleContainer.appendChild(canvas);
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        function resize() { canvas.width = window.innerWidth; canvas.height = Math.max(window.innerHeight, particleContainer.offsetHeight); }
-        resize(); window.addEventListener('resize', resize);
-        class P {
-            constructor() { this.reset(true); }
-            reset(init) { this.x = Math.random() * canvas.width; this.y = init ? Math.random() * canvas.height : canvas.height + 10; this.size = Math.random() * 1.8 + 0.4; this.sy = -Math.random() * 0.28 - 0.06; this.sx = (Math.random() - 0.5) * 0.18; this.o = Math.random() * 0.32 + 0.04; }
-            update() { this.y += this.sy; this.x += this.sx; if (this.y < -10) this.reset(false); }
-            draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = `rgba(201,169,110,${this.o})`; ctx.fill(); }
-        }
-        for (let i = 0; i < 55; i++) particles.push(new P());
-        (function loop() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(loop); })();
+    // ---------- 3D Tilt with dynamic glare (GSAP) ----------
+    const tiltEnabled = hasGSAP && !reduceMotion && window.matchMedia('(pointer: fine)').matches;
+    function addTilt(el) {
+        if (!tiltEnabled || el.classList.contains('tilt')) return;
+        el.classList.add('tilt');
+        const glare = document.createElement('div');
+        glare.className = 'tilt-glare';
+        el.appendChild(glare);
+
+        gsap.set(el, { transformPerspective: 1000 });
+        const rotX = gsap.quickTo(el, 'rotationX', { duration: .55, ease: 'power3.out' });
+        const rotY = gsap.quickTo(el, 'rotationY', { duration: .55, ease: 'power3.out' });
+        const lift = gsap.quickTo(el, 'scale', { duration: .55, ease: 'power3.out' });
+        const MAX = 7; // degrees
+
+        el.addEventListener('pointermove', e => {
+            const r = el.getBoundingClientRect();
+            const px = clamp((e.clientX - r.left) / r.width, 0, 1);
+            const py = clamp((e.clientY - r.top) / r.height, 0, 1);
+            rotY((px - .5) * 2 * MAX);
+            rotX((.5 - py) * 2 * MAX);
+            lift(1.015);
+            el.style.setProperty('--glare-x', (px * 100).toFixed(1) + '%');
+            el.style.setProperty('--glare-y', (py * 100).toFixed(1) + '%');
+        });
+        el.addEventListener('pointerleave', () => { rotX(0); rotY(0); lift(1); });
+    }
+    document.querySelectorAll('.feature-card, .plate, .gallery-item').forEach(addTilt);
+    // gallery items are re-created on tab switch
+    if (galleryGrid) {
+        new MutationObserver(() =>
+            galleryGrid.querySelectorAll('.gallery-item').forEach(addTilt)
+        ).observe(galleryGrid, { childList: true });
     }
 
     // ---------- Smooth anchor scroll ----------
