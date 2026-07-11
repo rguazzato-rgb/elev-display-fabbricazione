@@ -167,11 +167,11 @@ document.addEventListener('DOMContentLoaded', () => {
         components: [
             { src: 'images/parts/coperchio.png', label: 'S_03 — Coperchio in Ottone OT58' },
             { src: 'images/parts/supporto.png', label: 'S_02 — Supporto Rotante in Acciaio C45' },
-            { src: 'images/parts/colonna.png', label: 'S_05 — Colonna Centrale in PLA' },
-            { src: 'images/parts/tirante.png', label: 'S_07 — Tirante in Alluminio 6082' },
+            { src: 'images/parts/colonna.png', label: 'S_04 — Colonna Centrale in PLA' },
+            { src: 'images/parts/tirante.png', label: 'S_05 — Tirante in Alluminio 6082' },
             { src: 'images/parts/base.png', label: 'S_01 — Base in Alluminio Anodizzato' },
-            { src: 'images/parts/tappo.png', label: 'S_06/08 — Tappi in PLA (Lavorazione in coppia)' },
-            { src: 'images/parts/piedini.png', label: 'S_09 — Piedini in TPU (×4)' },
+            { src: 'images/parts/tappo.png', label: 'S_06 — Tappi in PLA (Coppia lavorata)' },
+            { src: 'images/parts/piedini.png', label: 'S_07 — Piedini in TPU (×4)' },
             { src: 'images/parts/assembled.png', label: 'Assieme completo del meccanismo' },
         ],
         details: [
@@ -357,12 +357,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const weightCtx = document.getElementById('weight-chart');
         if (weightCtx) {
-            const comps = ['Base\n(Al 6082)', 'Supporto\n(C45)', 'Coperchio\n(OT58)', 'Tirante\n(Al 6082)', 'Colonna\n(PLA)', 'Tappi S06/S08\n(Coppia PLA)', 'Piedino\n(TPU)'];
+            const comps = ['Base\n(Al 6082)', 'Supporto\n(C45)', 'Coperchio\n(OT58)', 'Colonna\n(PLA)', 'Tirante\n(Al 6082)', 'Tappi S06\n(Coppia PLA)', 'Piedino\n(TPU)'];
             new Chart(weightCtx, {
                 type: 'bar',
                 data: { labels: comps, datasets: [
-                    { label: 'Peso Grezzo (kg)', data: [12.83, 21.71, 9.69, 1.13, 0.061, 0.060, 0.011], backgroundColor: 'rgba(201,169,110,.6)', borderColor: '#c9a96e', borderWidth: 1, borderRadius: 6 },
-                    { label: 'Peso Finito (kg)', data: [4.97, 9.48, 4.00, 1.08, 0.061, 0.030, 0.011], backgroundColor: 'rgba(107,168,255,.6)', borderColor: '#6ba8ff', borderWidth: 1, borderRadius: 6 }
+                    { label: 'Peso Grezzo (kg)', data: [12.83, 21.71, 9.69, 0.061, 1.13, 0.060, 0.011], backgroundColor: 'rgba(201,169,110,.6)', borderColor: '#c9a96e', borderWidth: 1, borderRadius: 6 },
+                    { label: 'Peso Finito (kg)', data: [4.97, 9.48, 4.00, 0.061, 1.08, 0.030, 0.011], backgroundColor: 'rgba(107,168,255,.6)', borderColor: '#6ba8ff', borderWidth: 1, borderRadius: 6 }
                 ] },
                 options: { responsive: true, maintainAspectRatio: false,
                     plugins: { legend: { position: 'top', labels: { boxWidth: 12, boxHeight: 12, borderRadius: 6, useBorderRadius: true, padding: 18 } }, tooltip: { ...tooltip, callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toFixed(3)} kg` } } },
