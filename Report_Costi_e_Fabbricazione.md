@@ -55,15 +55,15 @@ I componenti di tipo **S** (ad eccezione della targhetta **S_04** acquistata fin
 | **S_02** | Supporto Rotante | Acciaio C45 | $21.71\text{ kg}$ | $9.48\text{ kg}$ | €43.42 | 1.20 | €30.00 | 1.20 (CNC) | €60.00 | €1.50 | **€134.92** |
 | **S_03** | Coperchio | Ottone OT58 | $9.69\text{ kg}$ | $4.00\text{ kg}$ | €82.37 | 0.80 | €20.00 | 0.80 (CNC) | €40.00 | €0.00 | **€142.37** |
 | **S_05** | Colonna | PLA | $0.061\text{ kg}$ | $0.061\text{ kg}$ | €1.53 | 0.25 | €6.25 | 4.00 (FDM) | €12.00 | €5.00 | **€24.78** |
-| **S_06** | Tappo | PLA | $0.030\text{ kg}$ | $0.030\text{ kg}$ | €0.75 | 0.15 | €3.75 | 2.00 (FDM) | €6.00 | €0.00 | **€10.50** |
-| **S_08** | Tappo | PLA | $0.030\text{ kg}$ | $0.030\text{ kg}$ | €0.75 | 0.15 | €3.75 | 2.00 (FDM) | €6.00 | €0.00 | **€10.50** |
+| **S_06/08** | Tappi (Coppia) | PLA | $0.060\text{ kg}$ | $0.030\text{ kg}$ | €1.50 | 0.30 | €7.50 | 4.00 (FDM) | €12.00 | €0.00 | **€21.00** |
 | **S_07** | Tirante | Alluminio 6082 | $1.13\text{ kg}$ | $1.08\text{ kg}$ | €5.09 | 0.30 | €7.50 | 0.30 (CNC) | €15.00 | €0.00 | **€27.59** |
 | **S_09** | Piedino (4x) | TPU | $0.011\text{ kg}$ | $0.011\text{ kg}$ | €0.39 | 0.20 | €5.00 | 1.00 (FDM) | €3.00 | €0.00 | **€8.39** |
 | **TOT** | **Semilavorati S**| | | | **€192.04**| **3.80** | **€95.00**| | **€179.50**| **€9.50** | **€476.04** |
 
 > [!NOTE]
 > - Per i componenti in metallo lavorati dal pieno (**S_01, S_02, S_03, S_07**), il peso grezzo si riferisce alla barra cilindrica di partenza (diametro $\varnothing$ leggermente maggiorato rispetto alla quota massima del bounding box). L'elevata asportazione di truciolo (sfrido) giustifica la differenza con il peso finito.
-> - Per i componenti in PLA/TPU stampati in 3D (**S_05, S_06, S_08, S_09**), il peso grezzo coincide con il peso finito (nessun canale di colata o sfrido rilevante). Le ore macchina si riferiscono al tempo di stampa su stampanti FDM (tariffa €3.00/ora, comprensiva di usura ugelli, manutenzione ed energia locale), mentre le ore operatore coprono setup, calibrazione e rimozione supporti.
+> - Per i componenti in PLA/TPU stampati in 3D (**S_05, S_06/08, S_09**), il peso grezzo coincide con il peso finito (nessun canale di colata o sfrido rilevante). Le ore macchina si riferiscono al tempo di stampa su stampanti FDM (tariffa €3.00/ora, comprensiva di usura ugelli, manutenzione ed energia locale), mentre le ore operatore coprono setup, calibrazione e rimozione supporti.
+> - I **Tappi S_06/08** vengono stampati in coppia su un'unica piastra FDM per ottimizzare i tempi macchina, per un costo di lavorazione complessivo di **€21,00** (0.060 kg grezzi, 4.00 ore macchina). Tuttavia, sull'espositore finito viene montato **un solo tappo**: il peso finito riportato (0.030 kg) e il costo imputato al prodotto (**€10,50**, metà della coppia) riflettono questo utilizzo singolo, mentre il tappo gemello rimane disponibile come ricambio/scarto di produzione.
 > - Il **Tirante S_07** è stato ipotizzato in alluminio estruso lavorato alle estremità (in linea con le richieste dell'utente), garantendo la massima rigidità strutturale rispetto all'ipotesi iniziale in plastica stampata 3D.
 > - I **trattamenti superficiali** comprendono l'anodizzazione nera della base in alluminio (€3.00/pezzo), la brunitura chimica dell'acciaio (€1.50/pezzo) e il wrapping manuale in vera fibra di carbonio della colonna centrale (€5.00/pezzo, comprensivo di resina e foglio di carbonio).
 
